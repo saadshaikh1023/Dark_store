@@ -2,6 +2,10 @@
 
 DarkStore is a revolutionary platform that transforms underutilized warehouse spaces into profitable dark stores, connecting property owners with India's leading rapid-delivery services. Our AI-powered platform helps businesses and individuals maximize their real estate potential in the booming quick-commerce sector.
 
+## 📱 Demo
+
+https://github.com/user-attachments/assets/226d32d0-203b-4e21-9fb5-f6d161094317
+
 ## 🚀 Features
 
 ### For Warehouse Owners
@@ -60,10 +64,8 @@ The Indian quick-commerce market is projected to grow to $5.5 billion by 2025, p
 - Data protection compliance
 - Regular security audits
 
-## 📱 Coming Soon
 
-- Mobile application (iOS & Android)
-- Advanced analytics dashboard
-- Real-time inventory management
-- Automated partnership matching
-- Enhanced prediction models
+
+
+
+
