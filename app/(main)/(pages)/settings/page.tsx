@@ -1,13 +1,13 @@
 'use client';
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Key } from 'react';
 import { ref, onValue } from 'firebase/database';
 import { database } from '@/firebase'; // Make sure this path is correct
 import data from '@/data.json'; // Import the warehouse data
 
 type WarehouseData = {
-  id: string;
+  id: Key | null | undefined;
   darkStoreName: string;
   warehouseSize: string;
   ceilingHeight: string;
@@ -40,8 +40,8 @@ const Settings = (props: Props) => {
       const data = snapshot.val();
       if (data) {
         const warehouseList = Object.entries(data).map(([key, value]) => ({
-          id: key,
-          ...(value as WarehouseData),
+          ...value as WarehouseData,
+          id: key, // Assign 'key' as 'id'
         }));
         setWarehouses(warehouseList);
       }
@@ -165,6 +165,6 @@ const Settings = (props: Props) => {
       </div>
     </div>
   );
-}
+};
 
 export default Settings;
