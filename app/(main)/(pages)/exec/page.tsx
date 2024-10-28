@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -38,10 +39,14 @@ const Settings = () => {
     onValue(warehousesRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        const warehouseList = Object.entries(data).map(([key, value]) => ({
-          id: key,
-          ...(value as WarehouseData),
-        }));
+        const warehouseList = Object.entries(data).map(([key, value]) => {
+          // Assuming value is already typed as WarehouseData without id
+          const { id, ...warehouseData } = value as WarehouseData; // Destructure to remove existing id if present
+          return {
+            id: key, // Assign id from key
+            ...warehouseData, // Include other properties
+          };
+        });
         setWarehouses(warehouseList);
       }
     });
