@@ -1,26 +1,17 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 
-import React from "react"
-import { usePathname } from "next/navigation"
-import Link from "next/link"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
-import { menuOptions } from "@/lib/constant"
-import clsx from "clsx"
-import { Separator } from '@/components/ui/separator'
-import { ModeToggle } from "../global/mode-toggle"
-import { motion } from "framer-motion"
+import React from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { menuOptions } from "@/lib/constant";
+import clsx from "clsx";
+import { Separator } from '@/components/ui/separator';
+import { ModeToggle } from "../global/mode-toggle";
+import { motion } from "framer-motion";
 
-type Props = {}
-
-const MenuOptions = (props: Props) => {
-  const pathName = usePathname()
+const MenuOptions: React.FC = () => {
+  const pathName = usePathname();
 
   return (
     <nav className="bg-gray-900 h-screen overflow-scroll flex items-center flex-col justify-between gap-10 py-6 px-2">
@@ -53,12 +44,6 @@ const MenuOptions = (props: Props) => {
                       >
                         <menuItem.Component
                           selected={pathName === menuItem.href}
-                          className={clsx(
-                            'text-gray-400 transition-colors duration-300',
-                            {
-                              'text-gray-100': pathName === menuItem.href,
-                            }
-                          )}
                         />
                       </motion.div>
                     </Link>
@@ -80,7 +65,7 @@ const MenuOptions = (props: Props) => {
         <ModeToggle />
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default MenuOptions
+export default MenuOptions;
